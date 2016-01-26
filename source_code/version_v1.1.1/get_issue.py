@@ -761,16 +761,19 @@ class MyFrame( CCT_report.MyFrame1 ):
     ps_report = self.ps_textCtrl.GetValue()
 #   --------------------------------------------------------Report format------------------------------------------------------------------------------------
 #   ----omnicast_report----
-# -*- coding: utf-8 -*-
     omnicast_report=\
     "[Final Report] "+ model_name.upper()+"-"+brand_name.upper()+"-"+ version_name + " Genetec-Omnicast test --- test on " + tester_today+"\n\n"\
-    +"Dear David,\n"\
-    +"The bug status of "+ model_name.upper()+"-"+brand_name.upper()+"-"+ version_name +" Genetec-Omnicast test, "+str(len(omnicast_issue)+len(common_omnicast_issue))+" bugs are opened and "+ str(len(omnicast_suggestion)+len(common_omnicast_suggestion)) +" suggestions are listed.\n"\
-    +"Please check it. Thanks for your great help!!\n\n"\
-    +"PS:\n"\
+    "Dear David,\n"\
+    "The bug status of "+ model_name.upper()+"-"+brand_name.upper()+"-"+ version_name +" Genetec-Omnicast test, "+str(len(omnicast_issue)+len(common_omnicast_issue))+" bugs are opened and "+ str(len(omnicast_suggestion)+len(common_omnicast_suggestion)) +" suggestions are listed.\n"\
+    "Please check it. Thanks for your great help!!\n\n"\
+    "PS:\n"\
     +ps_report+"\n\n"\
-    +"TestRail link:\n"\
+    "TestRail link:\n"\
     +testrail_link+"\n\n"\
+    "The file location:\n"\
+    "\\\dqa03\QMD\設計驗證部\\06_驗證六組\\03_Genetec\\99_Genetec_Omnicast_Report_On_going"+"\\" +file_model_name+"-"+brand_name.upper()+"\\"+version_name+"\n\n"\
+    "The Project common bug link:\n"\
+    +common_project_link\
     +"The Project common bug list:\n"\
     +common_omnicast_buglist+"\n"\
     +model_name.upper()+" bug link:\n"\
@@ -795,7 +798,7 @@ class MyFrame( CCT_report.MyFrame1 ):
     "TestRail link:\n"\
     +testrail_link+"\n\n"\
     "The file location:\n"\
-    +file_model_name+"-"+brand_name.upper()+"\\"+version_name+"\n\n"\
+    "\\\dqa03\QMD\設計驗證部\\06_驗證六組\\03_Genetec\\98_Genetec_Security_Center_Report_On_going"+"\\" +file_model_name+"-"+brand_name.upper()+"\\"+version_name+"\n\n"\
     "The Project common bug link:\n"\
     +common_project_link\
     +"The Project common bug list:\n"\
@@ -903,11 +906,7 @@ class MyFrame( CCT_report.MyFrame1 ):
     "TestRail link:\n"\
     +testrail_link+"\n\n"\
     "The file location:\n"\
-    "\\\dqa03\\QMD\\"\
-    +u"設"\
-    +"\\"\
-    +u"06_驗證六組"\
-    +"\\01_ONVIF\\01_ONVIF_Report\\OBM\\v15.06"+"\\" +file_model_name+"-"+brand_name.upper()+"\\"+version_name+"\n\n"\
+    "\\\dqa03\QMD\\設計驗證部\\06_驗證六組\\01_ONVIF\\01_ONVIF_Report\\OBM\\v15.06"+"\\" +file_model_name+"-"+brand_name.upper()+"\\"+version_name+"\n\n"\
     "The Project common bug link:\n"\
     +common_project_link\
     +"The Project common bug list:\n"\
@@ -979,7 +978,253 @@ class MyFrame( CCT_report.MyFrame1 ):
     
 #   -----Testing list report -----------------
     testing_report =''
-    testing_report="Upload testing list"
+    testing_report ="Upload testing list"
+
+#   --------------------------------------------------------Approval format------------------------------------------------------------------------------------
+#'''
+#   ----KM_link----
+    omnicast_KM_link  = "http://dqa03/qmdkm/support/compatiblity/camera/vvtk-genetec-omnicast-approval-status"
+    security_KM_link  = "http://dqa03/qmdkm/support/compatiblity/camera/vvtk-genetec-security-center"
+    milestone_KM_link = "http://dqa03/qmdkm/support/compatiblity/camera/milestone-approval-status"
+    nd8321_KM_link    = "http://dqa03/qmdkm/support/compatiblity/camera/vvtk-nd8321-approval-status"
+    nd8322p_KM_link   = "http://dqa03/qmdkm/support/compatiblity/camera/vvtk-nd8322p-approval-status"
+    onvif_KM_link     = "http://dqa03/qmdkm/support/compatiblity/camera/onvif"
+    shepherd_KM_link  = "http://dqa03/qmdkm/support/compatiblity/camera/vvtk-shepherd-2-approval-status"
+    vast_KM_link      = "http://dqa03/qmdkm/support/compatiblity/camera/vvtk-vast-approval-status"    
+#'''
+#   ----omnicast_approval----
+    omnicast_approval=\
+    "[Final Report] "+ model_name.upper()+"-"+brand_name.upper()+"-"+ version_name + " Genetec-Omnicast test (Approval) --- test on " + tester_today+"\n\n"\
+    "Dear David,\n"\
+    "The bug status of "+ model_name.upper()+"-"+brand_name.upper()+"-"+ version_name +" Genetec-Omnicast test (Approval), "+str(len(omnicast_issue)+len(common_omnicast_issue))+" bugs are opened and "+ str(len(omnicast_suggestion)+len(common_omnicast_suggestion)) +" suggestions are listed.\n"\
+    "Please check it. Thanks for your great help!!\n\n"\
+    "PS: Omnicast - Approval\n"\
+    +ps_report+"\n\n"\
+    "TestRail link:\n"\
+    +testrail_link+"\n\n"\
+    "The file location:\n"\
+    "\\\dqa03\\驗證六組_Testdata\\02_Omnicast"+"\\" +file_model_name+"-"+brand_name.upper()+"-"+version_name+"(Approval)\n\n"\
+    "KM link:\n"\
+    +omnicast_KM_link+"\n\n"\
+    +"The Project common bug link:\n"\
+    +common_project_link\
+    +"The Project common bug list:\n"\
+    +common_omnicast_buglist+"\n"\
+    +model_name.upper()+" bug link:\n"\
+    +"http://dqa02/projects/"+project_id+"/issues?set_filter=1&tracker_id=69\n\n"\
+    +model_name.upper()+" bug list:\n"\
+    +omnicast_buglist+"\n"\
+    +"Reopen bug:\n"\
+    +omnicast_reopen_bug_verify+"\n"\
+    +"Suggestion:\n"\
+    +omnicast_suggestion_verify+"\n"\
+    +"Best Regards,\n"\
+    +tester_account.capitalize()
+
+#   ----security_approval---
+    security_approval=\
+    "[Final Report] "+ model_name.upper()+"-"+brand_name.upper()+"-"+ version_name + " Genetec-Security Center test (Approval) --- test on " + tester_today+"\n\n"\
+    "Dear David,\n"\
+    "The bug status of "+ model_name.upper()+"-"+brand_name.upper()+"-"+ version_name +" Genetec-Security Center test (Approval), "+str(len(security_issue)+len(common_security_issue))+" bugs are opened and "+ str(len(security_suggestion)+len(common_security_suggestion)) +" suggestions are listed.\n"\
+    "Please check it. Thanks for your great help!!\n\n"\
+    "PS: Security Center - Approval\n"\
+    +ps_report+"\n\n"\
+    "TestRail link:\n"\
+    +testrail_link+"\n\n"\
+    "The file location:\n"\
+    "\\\dqa03\\驗證六組_Testdata\\03_Security_Center"+"\\" +file_model_name+"-"+brand_name.upper()+"-"+version_name+"(Approval)\n\n"\
+    "KM link:\n"\
+    +security_KM_link+"\n\n"\
+    +"The Project common bug link:\n"\
+    +common_project_link\
+    +"The Project common bug list:\n"\
+    +common_security_buglist+"\n"\
+    +model_name.upper()+" bug link:\n"\
+    +"http://dqa02/projects/"+project_id+"/issues?set_filter=1&tracker_id=69\n\n"\
+    +model_name.upper()+" bug list:\n"\
+    +security_buglist+"\n"\
+    +"Reopen bug:\n"\
+    +security_reopen_bug_verify+"\n"\
+    +"Suggestion:\n"\
+    +security_suggestion_verify+"\n"\
+    +"Best Regards,\n"\
+    +tester_account.capitalize()
+
+#   ----milestone_approval---        
+    milestone_approval=\
+    "[Final Report] "+ model_name.upper()+"-"+brand_name.upper()+"-"+ version_name + " Milestone test (Approval) --- test on " + tester_today+"\n\n"\
+    "Dear David,\n"\
+    "The bug status of "+ model_name.upper()+"-"+brand_name.upper()+"-"+ version_name +" Milestone test (Approval), "+str(len(milestone_issue)+len(common_milestone_issue))+" bugs are opened and "+ str(len(milestone_suggestion)+len(common_milestone_suggestion)) +" suggestions are listed.\n"\
+    "Please check it. Thanks for your great help!!\n\n"\
+    "PS: Milestone - Approval\n"\
+    +ps_report+"\n\n"\
+    "TestRail link:\n"\
+    +testrail_link+"\n\n"\
+    "The file location:\n"\
+    "N/A\n\n"\
+    "KM link:\n"\
+    +milestone_KM_link+"\n\n"\
+    +"The Project common bug link:\n"\
+    +common_project_link\
+    +"The Project common bug list:\n"\
+    +common_milestone_buglist+"\n"\
+    +model_name.upper()+" bug link:\n"\
+    +"http://dqa02/projects/"+project_id+"/issues?set_filter=1&tracker_id=69\n\n"\
+    +model_name.upper()+" bug list:\n"\
+    +milestone_buglist+"\n"\
+    +"Reopen bug:\n"\
+    +milestone_reopen_bug_verify+"\n"\
+    +"Suggestion:\n"\
+    +milestone_suggestion_verify+"\n"\
+    +"Best Regards,\n"\
+    +tester_account.capitalize()
+
+#   ----nd8321_approval---         
+    nd8321_approval=\
+    "[Final Report] "+ model_name.upper()+"-"+brand_name.upper()+"-"+ version_name + " ND8321 test (Approval) --- test on " + tester_today+"\n\n"\
+    "Dear David,\n"\
+    "The bug status of "+ model_name.upper()+"-"+brand_name.upper()+"-"+ version_name +" ND8321 test (Approval), "+str(len(nd8321_issue)+len(common_nd8321_issue))+" bugs are opened and "+ str(len(nd8321_suggestion)+len(common_nd8321_suggestion)) +" suggestions are listed.\n"\
+    "Please check it. Thanks for your great help!!\n\n"\
+    "PS: ND8321 - Approval\n"\
+    +ps_report+"\n\n"\
+    "TestRail link:\n"\
+    +testrail_link+"\n\n"\
+    "The file location:\n"\
+    "N/A\n\n"\
+    "KM link:\n"\
+    +nd8321_KM_link+"\n\n"\
+    +"The Project common bug link:\n"\
+    +common_project_link\
+    +"The Project common bug list:\n"\
+    +common_nd8321_buglist+"\n"\
+    +model_name.upper()+" bug link:\n"\
+    +"http://dqa02/projects/"+project_id+"/issues?set_filter=1&tracker_id=69\n\n"\
+    +model_name.upper()+" bug list:\n"\
+    +nd8321_buglist+"\n"\
+    +"Reopen bug:\n"\
+    +nd8321_reopen_bug_verify+"\n"\
+    +"Suggestion:\n"\
+    +nd8321_suggestion_verify+"\n"\
+    +"Best Regards,\n"\
+    +tester_account.capitalize()
+
+#   ----nd8322p_approval---         
+    nd8322p_approval=\
+    "[Final Report] "+ model_name.upper()+"-"+brand_name.upper()+"-"+ version_name + " ND8322P test (Approval) --- test on " + tester_today+"\n\n"\
+    "Dear David,\n"\
+    "The bug status of "+ model_name.upper()+"-"+brand_name.upper()+"-"+ version_name +" ND8322P test (Approval), "+str(len(nd8322p_issue)+len(common_nd8322p_issue))+" bugs are opened and "+ str(len(nd8322p_suggestion)+len(common_nd8322p_suggestion)) +" suggestions are listed.\n"\
+    "Please check it. Thanks for your great help!!\n\n"\
+    "PS: ND8322P - Approval\n"\
+    +ps_report+"\n\n"\
+    "TestRail link:\n"\
+    +testrail_link+"\n\n"\
+    "The file location:\n"\
+    "N/A\n\n"\
+    "KM link:\n"\
+    +nd8322p_KM_link+"\n\n"\
+    +"The Project common bug link:\n"\
+    +common_project_link\
+    +"The Project common bug list:\n"\
+    +common_nd8322p_buglist+"\n"\
+    +model_name.upper()+" bug link:\n"\
+    +"http://dqa02/projects/"+project_id+"/issues?set_filter=1&tracker_id=69\n\n"\
+    +model_name.upper()+" bug list:\n"\
+    +nd8322p_buglist+"\n"\
+    +"Reopen bug:\n"\
+    +nd8322p_reopen_bug_verify+"\n"\
+    +"Suggestion:\n"\
+    +nd8322p_suggestion_verify+"\n"\
+    +"Best Regards,\n"\
+    +tester_account.capitalize()
+
+#   ----onvif_approval---         
+    onvif_approval=\
+    "[Final Report] "+ model_name.upper()+"-"+brand_name.upper()+"-"+ version_name + " ONVIF test (Approval) --- test on " + tester_today+"\n\n"\
+    "Dear David,\n"\
+    "The bug status of "+ model_name.upper()+"-"+brand_name.upper()+"-"+ version_name +" ONVIF test (Approval), "+str(len(onvif_issue)+len(common_onvif_issue))+" bugs are opened and "+ str(len(onvif_suggestion)+len(common_onvif_suggestion)) +" suggestions are listed.\n"\
+    "Please check it. Thanks for your great help!!\n\n"\
+    "PS: ONVIF - Approval\n"\
+    +ps_report+"\n\n"\
+    "TestRail link:\n"\
+    +testrail_link+"\n\n"\
+    "The file location:\n"\
+    "\\\dqa03\QMD\\設計驗證部\\06_驗證六組\\01_ONVIF\\01_ONVIF_Report\\OBM\\v15.06"+"\\" +file_model_name+"-"+brand_name.upper()+"\\"+version_name+"\n\n"\
+    "KM link:\n"\
+    +onvif_KM_link+"\n\n"\
+    +"The Project common bug link:\n"\
+    +common_project_link\
+    +"The Project common bug list:\n"\
+    +common_onvif_buglist+"\n"\
+    +model_name.upper()+" bug link:\n"\
+    +"http://dqa02/projects/"+project_id+"/issues?set_filter=1&tracker_id=69\n\n"\
+    +model_name.upper()+" bug list:\n"\
+    +onvif_buglist+"\n"\
+    +"Reopen bug:\n"\
+    +onvif_reopen_bug_verify+"\n"\
+    +"Suggestion:\n"\
+    +onvif_suggestion_verify+"\n"\
+    +"Best Regards,\n"\
+    +tester_account.capitalize()
+
+#   ----shpherd_approval---           
+    shpherd_approval=\
+    "[Final Report] "+ model_name.upper()+"-"+brand_name.upper()+"-"+ version_name + " Shepherd test (Approval) --- test on " + tester_today+"\n\n"\
+    "Dear David,\n"\
+    "The bug status of "+ model_name.upper()+"-"+brand_name.upper()+"-"+ version_name +" Shepherd test (Approval), "+str(len(shpherd_issue)+len(common_shpherd_issue))+" bugs are opened and "+ str(len(shpherd_suggestion)+len(common_shpherd_suggestion)) +" suggestions are listed.\n"\
+    "Please check it. Thanks for your great help!!\n\n"\
+    "PS: Shepherd - Approval\n"\
+    +ps_report+"\n\n"\
+    "TestRail link:\n"\
+    +testrail_link+"\n\n"\
+    "The file location:\n"\
+    "N/A\n\n"\
+    "KM link:\n"\
+    +shepherd_KM_link+"\n\n"\
+    +"The Project common bug link:\n"\
+    +common_project_link\
+    +"The Project common bug list:\n"\
+    +common_shpherd_buglist+"\n"\
+    +model_name.upper()+" bug link:\n"\
+    +"http://dqa02/projects/"+project_id+"/issues?set_filter=1&tracker_id=69\n\n"\
+    +model_name.upper()+" bug list:\n"\
+    +shpherd_buglist+"\n"\
+    +"Reopen bug:\n"\
+    +shpherd_reopen_bug_verify+"\n"\
+    +"Suggestion:\n"\
+    +shpherd_suggestion_verify+"\n"\
+    +"Best Regards,\n"\
+    +tester_account.capitalize()
+
+#   ----vast_approval---         
+    vast_approval=\
+    "[Final Report] "+ model_name.upper()+"-"+brand_name.upper()+"-"+ version_name + " VAST test (Approval) --- test on " + tester_today+"\n\n"\
+    "Dear David,\n"\
+    "The bug status of "+ model_name.upper()+"-"+brand_name.upper()+"-"+ version_name +" VAST test (Approval), "+str(len(vast_issue)+len(common_vast_issue))+" bugs are opened and "+ str(len(vast_suggestion)+len(common_vast_suggestion)) +" suggestions are listed.\n"\
+    "Please check it. Thanks for your great help!!\n\n"\
+    "PS: VAST - Approval\n"\
+    +ps_report+"\n\n"\
+    "TestRail link:\n"\
+    +testrail_link+"\n\n"\
+    "The file location:\n"\
+    "N/A\n\n"\
+    "KM link:\n"\
+    +vast_KM_link+"\n\n"\
+    +"The Project common bug link:\n"\
+    +common_project_link\
+    +"The Project common bug list:\n"\
+    +common_vast_buglist+"\n"\
+    +model_name.upper()+" bug link:\n"\
+    +"http://dqa02/projects/"+project_id+"/issues?set_filter=1&tracker_id=69\n\n"\
+    +model_name.upper()+" bug list:\n"\
+    +vast_buglist+"\n"\
+    +"Reopen bug:\n"\
+    +vast_reopen_bug_verify+"\n"\
+    +"Suggestion:\n"\
+    +vast_suggestion_verify+"\n"\
+    +"Best Regards,\n"\
+    +tester_account.capitalize()
+
+#   ----judge daliy_final type---    
     
     while test_type is ():
         self.m_statusBar.SetStatusText( 'Please select Test Type.' )
@@ -1042,7 +1287,36 @@ class MyFrame( CCT_report.MyFrame1 ):
                     if item == "Shepherd":
                         self.shpherd_textCtrl.AppendText(str(testing_report.decode('utf-8').encode('cp950')))
                     if item == "VAST":
-                        self.vast_textCtrl.AppendText(str(testing_report.decode('utf-8').encode('cp950')))                             
+                        self.vast_textCtrl.AppendText(str(testing_report.decode('utf-8').encode('cp950')))
+        if daliy_final == "Approval":
+            for item in test_type:
+                if item == "All":
+                    self.omnicast_textCtrl.AppendText(str(omnicast_approval.decode('utf-8').encode('cp950')))
+                    self.security_textCtrl.AppendText(str(security_approval.decode('utf-8').encode('cp950')))
+                    self.milestone_textCtrl.AppendText(str(milestone_approval.decode('utf-8').encode('cp950')))
+                    self.nd8321_textCtrl.AppendText(str(nd8321_approval.decode('utf-8').encode('cp950')))    
+                    self.nd8322p_textCtrl.AppendText(str(nd8322p_approval.decode('utf-8').encode('cp950')))
+                    self.onvif_textCtrl.AppendText(str(onvif_approval.decode('utf-8').encode('cp950')))    
+                    self.shpherd_textCtrl.AppendText(str(shpherd_approval.decode('utf-8').encode('cp950')))
+                    self.vast_textCtrl.AppendText(str(vast_approval.decode('utf-8').encode('cp950')))
+                    break
+                if not item =="All":
+                    if item == "Genetec-Omnicast":
+                        self.omnicast_textCtrl.AppendText(str(omnicast_approval.decode('utf-8').encode('cp950')))
+                    if item == "Genetec-Security center":
+                        self.security_textCtrl.AppendText(str(security_approval.decode('utf-8').encode('cp950')))                            
+                    if item == "Milestone":
+                        self.milestone_textCtrl.AppendText(str(milestone_approval.decode('utf-8').encode('cp950')))  
+                    if item == "ND8321":
+                        self.nd8321_textCtrl.AppendText(str(nd8321_approval.decode('utf-8').encode('cp950'))) 
+                    if item == "ND8322P":
+                        self.nd8322p_textCtrl.AppendText(str(nd8322p_approval.decode('utf-8').encode('cp950')))
+                    if item == "ONVIF":
+                        self.onvif_textCtrl.AppendText(str(onvif_approval.decode('utf-8').encode('cp950')))
+                    if item == "Shepherd":
+                        self.shpherd_textCtrl.AppendText(str(shpherd_approval.decode('utf-8').encode('cp950')))
+                    if item == "VAST":
+                        self.vast_textCtrl.AppendText(str(vast_approval.decode('utf-8').encode('cp950')))                              
         self.m_statusBar.SetStatusText( 'Create Report successfully!' )   
     
 #def updatebutton
@@ -1072,7 +1346,17 @@ class MyFrame( CCT_report.MyFrame1 ):
     testing_list_name = model_name+"_Testing_list.doc"
 
 #   cct_request_issue = redmine.issue.filter(project_id='dqa-test-1-request-integration')
-
+#'''
+#   ----update KM_link----
+    update_omnicast_KM_link  = "<a href='"+omnicast_KM_link+"'>"+omnicast_KM_link+"</a>"
+    update_security_KM_link  = "<a href='"+security_KM_link+"'>"+security_KM_link+"</a>"
+    update_milestone_KM_link = "<a href='"+milestone_KM_link+"'>"+milestone_KM_link+"</a>"
+    update_nd8321_KM_link    = "<a href='"+nd8321_KM_link+"'>"+nd8321_KM_link+"</a>"
+    update_nd8322p_KM_link   = "<a href='"+nd8322p_KM_link+"'>"+nd8322p_KM_link+"</a>"
+    update_onvif_KM_link     = "<a href='"+onvif_KM_link+"'>"+onvif_KM_link+"</a>"
+    update_shepherd_KM_link  = "<a href='"+shepherd_KM_link+"'>"+shepherd_KM_link+"</a>"
+    update_vast_KM_link      = "<a href='"+vast_KM_link+"'>"+vast_KM_link+"</a>"
+#'''
 #   update Genetec-Omnicast
     if not self.omnicast_textCtrl.GetValue()=="":
         omnicast_report = self.omnicast_textCtrl.GetValue()
@@ -1082,8 +1366,10 @@ class MyFrame( CCT_report.MyFrame1 ):
             update_omnicast_report = update_omnicast_report.replace(common_project_link, update_common_project_link)
         if not self.testrail_textCtrl.GetValue() =="":
             update_omnicast_report = update_omnicast_report.replace(testrail, update_testrail)
+        if daliy_final == "Approval":
+            update_omnicast_report = update_omnicast_report.replace(omnicast_KM_link, update_omnicast_KM_link)
         update_omnicast_report = update_omnicast_report.replace("\n","<br>")
-       
+
         for issue in cct_request_issue:
             if model_name in issue.subject and "Genetec-Omnicast" in issue.subject:
                 issue.custom_fields = [{'id': 80, 'value': daliy_final}]
@@ -1104,6 +1390,8 @@ class MyFrame( CCT_report.MyFrame1 ):
             update_security_report = update_security_report.replace(common_project_link, update_common_project_link)
         if not self.testrail_textCtrl.GetValue() =="":
             update_security_report = update_security_report.replace(testrail, update_testrail)
+        if daliy_final == "Approval":
+            update_omnicast_report = update_omnicast_report.replace(security_KM_link, update_security_KM_link)
         update_security_report = update_security_report.replace("\n","<br>")
        
         for issue in cct_request_issue:
@@ -1126,6 +1414,8 @@ class MyFrame( CCT_report.MyFrame1 ):
             update_milestone_report = update_milestone_report.replace(common_project_link, update_common_project_link)
         if not self.testrail_textCtrl.GetValue() =="":
             update_milestone_report = update_milestone_report.replace(testrail, update_testrail)
+        if daliy_final == "Approval":
+            update_omnicast_report = update_omnicast_report.replace(milestone_KM_link, update_milestone_KM_link)
         update_milestone_report = update_milestone_report.replace("\n","<br>")
        
         for issue in cct_request_issue:
@@ -1148,6 +1438,8 @@ class MyFrame( CCT_report.MyFrame1 ):
             update_nd8321_report = update_nd8321_report.replace(common_project_link, update_common_project_link)
         if not self.testrail_textCtrl.GetValue() =="":
             update_nd8321_report = update_nd8321_report.replace(testrail, update_testrail)
+        if daliy_final == "Approval":
+            update_omnicast_report = update_omnicast_report.replace(nd8321_KM_link, update_nd8321_KM_link)
         update_nd8321_report = update_nd8321_report.replace("\n","<br>")
        
         for issue in cct_request_issue:
@@ -1170,6 +1462,8 @@ class MyFrame( CCT_report.MyFrame1 ):
             update_nd8322p_report = update_nd8322p_report.replace(common_project_link, update_common_project_link)
         if not self.testrail_textCtrl.GetValue() =="":
             update_nd8322p_report = update_nd8322p_report.replace(testrail, update_testrail)
+        if daliy_final == "Approval":
+            update_omnicast_report = update_omnicast_report.replace(nd8322p_KM_link, update_nd8322p_KM_link)
         update_nd8322p_report = update_nd8322p_report.replace("\n","<br>")
        
         for issue in cct_request_issue:
@@ -1192,6 +1486,8 @@ class MyFrame( CCT_report.MyFrame1 ):
             update_shpherd_report = update_shpherd_report.replace(common_project_link, update_common_project_link)
         if not self.testrail_textCtrl.GetValue() =="":
             update_shpherd_report = update_shpherd_report.replace(testrail, update_testrail)
+        if daliy_final == "Approval":
+            update_omnicast_report = update_omnicast_report.replace(shepherd_KM_link, update_shepherd_KM_link)
         update_shpherd_report = update_shpherd_report.replace("\n","<br>")
        
         for issue in cct_request_issue:
@@ -1214,6 +1510,8 @@ class MyFrame( CCT_report.MyFrame1 ):
             update_vast_report = update_vast_report.replace(common_project_link, update_common_project_link)
         if not self.testrail_textCtrl.GetValue() =="":
             update_vast_report = update_vast_report.replace(testrail, update_testrail)
+        if daliy_final == "Approval":
+            update_omnicast_report = update_omnicast_report.replace(vast_KM_link, update_vast_KM_link)
         update_vast_report = update_vast_report.replace("\n","<br>")
        
         for issue in cct_request_issue:
@@ -1236,6 +1534,8 @@ class MyFrame( CCT_report.MyFrame1 ):
             update_onvif_report = update_onvif_report.replace(common_project_link, update_common_project_link)
         if not self.testrail_textCtrl.GetValue() =="":
             update_onvif_report = update_onvif_report.replace(testrail, update_testrail)
+        if daliy_final == "Approval":
+            update_omnicast_report = update_omnicast_report.replace(onvif_KM_link, update_onvif_KM_link)
         update_onvif_report = update_onvif_report.replace("\n","<br>")
        
         for issue in cct_request_issue:
